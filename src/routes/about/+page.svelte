@@ -1,6 +1,8 @@
 <script lang="ts">
+	import AltService from '$lib/altService.svelte';
 	import Footer from '$lib/footer.svelte';
 	import Navbar from '$lib/navbar.svelte';
+	import Team from '$lib/team.svelte';
     import type { PageData } from './$types';
     export let data: PageData;
     import { IconMoodSmile, IconAddressBook, IconListTree, IconSunElectricity, IconSunFilled, IconSunMoon, IconSunHigh } from "@tabler/icons-svelte";
@@ -107,113 +109,9 @@
         </div>
     </section><!-- End Stats Counter Section -->
 
-    <!-- ======= Alt Services Section ======= -->
-    <section id="alt-services" class="alt-services">
-        <div class="container" data-aos="fade-up">
+   <AltService />
 
-            <div class="grid lg:grid-cols-12 justify-around gap-x-4">
-                <div class="lg:col-span-6 img-bg" style="background-image: url(img/alt-services.jpg);"
-                    data-aos="zoom-in" data-aos-delay="100"></div>
-
-                <div class="lg:col-span-5 flex flex-col justify-center">
-                    <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                    <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed
-                        minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
-
-                    <div class="icon-box flex relative" data-aos="fade-up" data-aos-delay="100">
-                        <IconSunElectricity class="flex-shrink-0" />
-                        <div>
-                            <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="icon-box flex relative" data-aos="fade-up" data-aos-delay="200">
-                        <IconSunFilled class="flex-shrink-0" />
-                        <div>
-                            <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="icon-box flex relative" data-aos="fade-up" data-aos-delay="300">
-                        <IconSunMoon class="flex-shrink-0" />
-                        <div>
-                            <h4><a href="" class="stretched-link">Dine Pad</a></h4>
-                            <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut
-                                deserunt minus aut eligendi omnis</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                    <div class="icon-box flex relative" data-aos="fade-up" data-aos-delay="400">
-                        <IconSunHigh class="flex-shrink-0" />
-                        <div>
-                            <h4><a href="" class="stretched-link">Tride clov</a></h4>
-                            <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit non
-                                aspernatur odit amet. Et eligendi</p>
-                        </div>
-                    </div><!-- End Icon Box -->
-
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End Alt Services Section -->
-
-    <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <h2>Our Team</h2>
-                <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat
-                    sunt id nobis omnis tiledo stran delop</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-y-5">
-
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="img/team/team-1.jpg" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter" /></a>
-                            <a href="#"><i class="bi bi-facebook" /></a>
-                            <a href="#"><i class="bi bi-instagram" /></a>
-                            <a href="#"><i class="bi bi-linkedin" /></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Walter White</h4>
-                        <span>Chief Executive Officer</span>
-                        <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
-                            distinctio dire flow</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="member" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-img">
-                        <img src="img/team/team-2.jpg" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter" /></a>
-                            <a href="#"><i class="bi bi-facebook" /></a>
-                            <a href="#"><i class="bi bi-instagram" /></a>
-                            <a href="#"><i class="bi bi-linkedin" /></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Sarah Jhonson</h4>
-                        <span>Product Manager</span>
-                        <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                            exercitationem ut</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-            </div>
-
-        </div>
-    </section><!-- End Our Team Section -->
+    <Team />
 
 </main><!-- End #main -->
 
