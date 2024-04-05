@@ -1,14 +1,34 @@
-<!-- ======= Header ======= -->
+<script>
+	import { IconList, IconX } from "@tabler/icons-svelte";
+	import { onMount } from "svelte";
+
+	onMount(()=>{
+		const mobileNavShow = document.querySelector('.mobile-nav-show');
+		const mobileNavHide = document.querySelector('.mobile-nav-hide');
+
+		document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+			el.addEventListener('click', function(event) {
+			event.preventDefault();
+			mobileNavToogle();
+			})
+		});
+
+		function mobileNavToogle() {
+			document.body.classList.toggle('mobile-nav-active');
+			mobileNavShow?.classList.toggle('hidden');
+			mobileNavHide?.classList.toggle('hidden');
+		}
+	})
+</script>
+
 <header id="header" class="header flex items-center">
-	<div class="container-fluid container-xl flex items-center content-between">
+	<div class="container flex items-center justify-between">
 		<a href="index.html" class="logo flex items-center">
-			<!-- Uncomment the line below if you also wish to use an image logo -->
-			<!-- <img src="assets/img/logo.png" alt=""> -->
 			<h1>UpConstruction<span>.</span></h1>
 		</a>
 
-		<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-		<i class="mobile-nav-toggle mobile-nav-hide hidden bi bi-x"></i>
+		<IconList size={42} class="mobile-nav-toggle mobile-nav-show" />
+		<IconX size={42} class="mobile-nav-toggle mobile-nav-hide hidden" />
 		<nav id="navbar" class="navbar">
 			<ul>
 				<li><a href="index.html" class="active">Home</a></li>
@@ -16,32 +36,9 @@
 				<li><a href="services.html">Services</a></li>
 				<li><a href="projects.html">Projects</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li class="dropdown">
-					<a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a
-					>
-					<ul>
-						<li><a href="#">Dropdown 1</a></li>
-						<li class="dropdown">
-							<a href="#"
-								><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a
-							>
-							<ul>
-								<li><a href="#">Deep Dropdown 1</a></li>
-								<li><a href="#">Deep Dropdown 2</a></li>
-								<li><a href="#">Deep Dropdown 3</a></li>
-								<li><a href="#">Deep Dropdown 4</a></li>
-								<li><a href="#">Deep Dropdown 5</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Dropdown 2</a></li>
-						<li><a href="#">Dropdown 3</a></li>
-						<li><a href="#">Dropdown 4</a></li>
-					</ul>
-				</li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		<!-- .navbar -->
 	</div>
 </header>
-<!-- End Header -->
+<!-- end here -->

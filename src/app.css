@@ -1119,13 +1119,13 @@
     margin-top: 50px;
   }
   
-  .alt-services .icon-box i {
+  .alt-services .icon-box svg {
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
     margin-right: 25px;
-    font-size: 28px;
+    padding: 8px;
     width: 56px;
     height: 56px;
     border-radius: 4px;
@@ -1135,7 +1135,7 @@
     transition: 0.3s;
   }
   
-  .alt-services .icon-box:hover i {
+  .alt-services .icon-box:hover svg {
     background-color: var(--color-primary);
     color: #fff;
   }
@@ -1264,11 +1264,11 @@
     padding: 30px;
   }
   
-  .stats-counter .stats-item i {
-    font-size: 42px;
-    line-height: 0;
+  .stats-counter .stats-item svg {
+    width: 42px;
+    height: 42px;
     margin-right: 20px;
-    color: var(--color-primary);
+    stroke: var(--color-primary);
   }
   
   .stats-counter .stats-item span {
@@ -2557,7 +2557,6 @@
     background: url("../img/footer-bg.jpg") top center no-repeat;
     background-size: cover;
     font-size: 14px;
-    padding: 80px 0 60px 0;
     position: relative;
   }
   

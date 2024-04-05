@@ -34,6 +34,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tabler/icons-svelte": "^3.1.0"
+		"@srexi/purecounterjs": "^1.5.0",
+		"@tabler/icons-svelte": "^3.1.0",
+		"svelte-countup": "^0.2.6"
 	}
 }
