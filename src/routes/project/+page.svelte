@@ -1,6 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Navbar from '$lib/navbar.svelte';
+	import { IconZoom, IconLink } from '@tabler/icons-svelte';
     import type { PageData } from './$types';
+	import { base } from '$lib';
+    const filter = ['remodeling','construction','repairs','design']
     
     export let data: PageData;
 </script>
@@ -11,8 +15,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs flex items-center"
-        style="background-image: url('img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs flex items-center" style="background-image: url('{base}storage/projects/breadcrumbs-bg.jpg');">
         <div class="container relative flex flex-col items-center" data-aos="fade">
 
             <h2>Projects</h2>
@@ -28,8 +31,7 @@
     <section id="projects" class="projects">
         <div class="container" data-aos="fade-up">
 
-            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
-                data-portfolio-sort="original-order">
+            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
                 <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
                     <li data-filter="*" class="filter-active">All</li>
@@ -41,186 +43,19 @@
 
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="portfolio-item filter-remodeling">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/remodeling-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Remodeling 1</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/remodeling-1.jpg" title="Remodeling 1"
-                                    data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
+                    {#each [1,2,3,4,5,6,7,8,9,10,11,12] as item, index}
+                        <div class="portfolio-item filter-{filter[Math.floor(Math.random()*4)]}">
+                            <div class="portfolio-content h-56">
+                                <img src="{base}storage/projects/img_{index+40}.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>{filter[Math.floor(Math.random()*4)]}</h4>
+                                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                    <a href="{base}storage/projects/img_{index+40}.jpg" title="Remodeling 1" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><IconZoom class="" /></a>
+                                    <a href="project/1" title="More Details" class="details-link"><IconLink class="" /></a>
+                                </div>
                             </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-construction">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/construction-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Construction 1</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/construction-1.jpg" title="Construction 1"
-                                    data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-repairs">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/repairs-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Repairs 1</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/repairs-1.jpg" title="Repairs 1"
-                                    data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-design">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/design-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Design 1</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/design-1.jpg" title="Repairs 1"
-                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-remodeling">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/remodeling-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Remodeling 2</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/remodeling-2.jpg" title="Remodeling 2"
-                                    data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-construction">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/construction-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Construction 2</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/construction-2.jpg" title="Construction 2"
-                                    data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-repairs">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/repairs-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Repairs 2</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/repairs-2.jpg" title="Repairs 2"
-                                    data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-design">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/design-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Design 2</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/design-2.jpg" title="Repairs 2"
-                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-remodeling">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/remodeling-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Remodeling 3</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/remodeling-3.jpg" title="Remodeling 3"
-                                    data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-construction">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/construction-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Construction 3</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/construction-3.jpg" title="Construction 3"
-                                    data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-repairs">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/repairs-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Repairs 3</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/repairs-3.jpg" title="Repairs 2"
-                                    data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
-                    <div class="portfolio-item filter-design">
-                        <div class="portfolio-content h-100">
-                            <img src="img/projects/design-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Design 3</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="img/projects/design-3.jpg" title="Repairs 3"
-                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="project-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- End Projects Item -->
-
+                        </div><!-- End Projects Item -->
+                    {/each}
                 </div><!-- End Projects Container -->
 
             </div>

@@ -1,6 +1,7 @@
 <script>
 	import { IconList, IconX } from "@tabler/icons-svelte";
 	import { onMount } from "svelte";
+	import { page } from '$app/stores';
 
 	onMount(()=>{
 		const mobileNavShow = document.querySelector('.mobile-nav-show');
@@ -19,6 +20,8 @@
 			mobileNavHide?.classList.toggle('hidden');
 		}
 	})
+
+	const path = $page.url.pathname
 </script>
 
 <header id="header" class="header flex items-center">
@@ -31,9 +34,9 @@
 		<IconX size={42} class="mobile-nav-toggle mobile-nav-hide hidden" />
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a href="/" class="active">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/project">Projects</a></li>
+				<li><a href="/" class:active={path === '/'}>Home</a></li>
+				<li><a href="/about" class:active={path.startsWith('/about')}>About</a></li>
+				<li><a href="/project" class:active={path.startsWith('/project')}>Projects</a></li>
 			</ul>
 		</nav>
 	</div>

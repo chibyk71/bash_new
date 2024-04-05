@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { base } from '$lib';
 	import AltService from '$lib/altService.svelte';
 	import Footer from '$lib/footer.svelte';
 	import Navbar from '$lib/navbar.svelte';
 	import Team from '$lib/team.svelte';
     import type { PageData } from './$types';
     export let data: PageData;
-    import { IconMoodSmile, IconAddressBook, IconListTree, IconSunElectricity, IconSunFilled, IconSunMoon, IconSunHigh } from "@tabler/icons-svelte";
+    import { IconMoodSmile, IconAddressBook, IconListTree } from "@tabler/icons-svelte";
     import Countup from "svelte-countup";
 </script>
 
@@ -16,7 +17,7 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs flex items-center"
-        style="background-image: url('img/breadcrumbs-bg.jpg');">
+        style="background-image: url('{base}storage/projects/breadcrumbs-bg.jpg');">
         <div class="container relative flex flex-col items-center" data-aos="fade">
 
             <h2>About</h2>
@@ -34,7 +35,7 @@
 
             <div class="flex flex-wrap relative">
 
-                <div class="lg:w-7/12 w-full about-img" style="background-image: url(img/about.jpg);"></div>
+                <div class="lg:w-7/12 w-full about-img" style="background-image: url({base}storage/projects//about.jpg);"></div>
 
                 <div class="lg:w-7/12 w-full">
                     <h2>Consequatur eius et magnam</h2>
