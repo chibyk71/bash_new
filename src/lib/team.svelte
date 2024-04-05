@@ -20,7 +20,7 @@
                     <img src="{base}storage/projects/governor.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="member-info text-center">
-                    <h4 class="capitalize"><small>Hon </small> <b>nasiru ibrahim</b></h4>
+                    <h4 class="capitalize"><small>His excellency</small> <b>dauda lawal</b></h4>
                     <span class="capitalize">the executive governor of zamfara state</span>
                     <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
                         distinctio dire flow</p>
