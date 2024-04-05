@@ -23,7 +23,7 @@
                 <div class="lg:w-1/2 w-full text-center">
                     <h2 data-aos="fade-down">Welcome to <span>Zamfara state govenment</span></h2>
                     <p data-aos="fade-up">Project Monitoring Software</p>
-                    <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
+                    <a data-aos="fade-up" data-aos-delay="200" href="#constructions" class="btn-get-started">Get Started</a>
                 </div>
             </div>
         </div>
@@ -143,14 +143,6 @@
             </div>
 
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
-
-                <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-remodeling">Remodeling</li>
-                    <li data-filter=".filter-construction">Construction</li>
-                    <li data-filter=".filter-repairs">Repairs</li>
-                    <li data-filter=".filter-design">Design</li>
-                </ul><!-- End Projects Filters -->
 
                 <div class="grid lg:grid-cols-3 lmd:grid-cols-2 gap-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 

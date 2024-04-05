@@ -33,14 +33,6 @@
 
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
-                <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-remodeling">Remodeling</li>
-                    <li data-filter=".filter-construction">Construction</li>
-                    <li data-filter=".filter-repairs">Repairs</li>
-                    <li data-filter=".filter-design">Design</li>
-                </ul><!-- End Projects Filters -->
-
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                     {#each [1,2,3,4,5,6,7,8,9,10,11,12] as item, index}
