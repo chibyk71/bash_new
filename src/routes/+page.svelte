@@ -54,9 +54,9 @@
 
                 <div class="" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-item">
-                        <div class="grid grid-cols-12">
+                        <div class="grid xl:grid-cols-12 gap-y-4 ">
                             <div class="xl:col-span-5">
-                                <div class="card-bg" style="background-image: url(img/constructions-1.jpg);">
+                                <div class="card-bg" style="background-image: url({base}storage/projects/img_{50}.jpg);">
                                 </div>
                             </div>
                             <div class="xl:col-span-7 flex items-center">
@@ -73,9 +73,9 @@
 
                 <div class="" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-item">
-                        <div class="grid grid-cols-12">
+                        <div class="grid xl:grid-cols-12">
                             <div class="xl:col-span-5">
-                                <div class="card-bg" style="background-image: url(img/constructions-2.jpg);">
+                                <div class="card-bg" style="background-image: url({base}storage/projects/img_{52}.jpg);">
                                 </div>
                             </div>
                             <div class="xl:col-span-7 flex items-center">
@@ -92,9 +92,9 @@
 
                 <div class="" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-item">
-                        <div class="grid grid-cols-12">
+                        <div class="grid xl:grid-cols-12">
                             <div class="xl:col-span-5">
-                                <div class="card-bg" style="background-image: url(img/constructions-3.jpg);">
+                                <div class="card-bg" style="background-image: url({base}storage/projects/img_63.jpg);">
                                 </div>
                             </div>
                             <div class="xl:col-span-7 flex items-center">
@@ -111,9 +111,9 @@
 
                 <div class="" data-aos="fade-up" data-aos-delay="400">
                     <div class="card-item">
-                        <div class="grid grid-cols-12">
+                        <div class="xl:grid xl:grid-cols-12">
                             <div class="xl:col-span-5">
-                                <div class="card-bg" style="background-image: url(img/constructions-4.jpg);">
+                                <div class="card-bg" style="background-image: url({base}storage/projects/img_64.jpg);">
                                 </div>
                             </div>
                             <div class="xl:col-span-7 flex items-center">
