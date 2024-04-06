@@ -6,7 +6,7 @@
 	import Team from '$lib/team.svelte';
     import type { PageData } from './$types';
     export let data: PageData;
-    import { IconMoodSmile, IconAddressBook, IconListTree } from "@tabler/icons-svelte";
+    import { IconMoodSmile, IconAddressBook, IconListTree, IconSquareCheckFilled } from "@tabler/icons-svelte";
     import Countup from "svelte-countup";
 </script>
 
@@ -40,27 +40,14 @@
                 <div class="lg:w-7/12 w-full">
                     <h2>Consequatur eius et magnam</h2>
                     <div class="our-story">
-                        <h4>Est 1988</h4>
-                        <h3>Our Story</h3>
-                        <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia
-                            maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at
-                            dolor. Aliquam consectetur laudantium temporibus dicta minus dolor.</p>
+                        <h3>Our Mission</h3>
+                        <p>Our mission is to provide citizens with easy access to information about government contracts and projects.</p>
+                        <p>We aim to promote transparency and empower citizens by sharing project details in a user-friendly manner.</p>
                         <ul>
-                            <li><i class="bi bi-check-circle" /> <span>Ullamco laboris nisi ut aliquip ex ea
-                                    commo</span></li>
-                            <li><i class="bi bi-check-circle" /> <span>Duis aute irure dolor in reprehenderit
-                                    in</span></li>
-                            <li><i class="bi bi-check-circle" /> <span>Ullamco laboris nisi ut aliquip ex
-                                    ea</span></li>
+                            <li><IconSquareCheckFilled />Transparency: <span>Citizens can access real-time information on government projects, fostering trust and accountability.</span></li>
+                            <li><IconSquareCheckFilled /> Informed Decision-Making: <span>By understanding project details, citizens can participate in discussions and provide feedback.</span></li>
+                            <li><IconSquareCheckFilled /> Empowerment:  <span>Accessible data allows citizens to monitor progress, identify issues, and engage with policymakers.</span></li>
                         </ul>
-                        <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit
-                            repellendus porro in quo eveniet. Molestias in maxime doloremque.</p>
-
-                        <div class="watch-video flex items-center relative">
-                            <i class="bi bi-play-circle" />
-                            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                                class="glightbox stretched-link">Watch Video</a>
-                        </div>
                     </div>
                 </div>
 
