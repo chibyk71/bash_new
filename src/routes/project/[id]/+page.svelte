@@ -6,6 +6,8 @@
 	import Projects from '$lib/projects.svelte';
 
     let projects: {
+		Files: any[];
+		milestones: any[];
 		status: 'IN_PROGRESS'|'ON_HOLD'|'COMPLETED'|'NOT_STARTED'|'CANCELED';
 		date_of_award: string | number | Date;
 		due_date: string | number | Date;
@@ -78,7 +80,7 @@
     
                         </div>
     
-                        <Projects />
+                        <Projects data={projects.Files} />
                     </div>
     
                     <div class="lg:col-span-4 order-1 lg:order-2">
