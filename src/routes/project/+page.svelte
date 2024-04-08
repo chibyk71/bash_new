@@ -1,10 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Navbar from '$lib/navbar.svelte';
-	import { IconZoom, IconLink } from '@tabler/icons-svelte';
-    import type { PageData } from './$types';
+	import type { PageData } from './$types';
 	import { base } from '$lib';
-	import Projects from '$lib/projects.svelte';
 	import Construction from '$lib/construction.svelte';
 	import Footer from '$lib/footer.svelte';
     

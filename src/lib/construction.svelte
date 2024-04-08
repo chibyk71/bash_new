@@ -8,8 +8,6 @@
     onMount(async ()=>{
         projects = await fetch(base+'api/products.php?projects&limit='+limit)
         .then((res)=>res.json())
-
-        console.table(projects)
     })
 </script>
 
