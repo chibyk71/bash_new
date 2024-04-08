@@ -5,6 +5,8 @@
     import type { PageData } from './$types';
 	import { base } from '$lib';
 	import Projects from '$lib/projects.svelte';
+	import Construction from '$lib/construction.svelte';
+	import Footer from '$lib/footer.svelte';
     
     export let data: PageData;
 </script>
@@ -31,11 +33,12 @@
     <section id="projects" class="projects">
         <div class="container" data-aos="fade-up">
 
-            <div class="portfolio-isotope">
-               <Projects />
-            </div>
+            <Construction />
 
         </div>
     </section><!-- End Our Projects Section -->
 
 </main><!-- End #main -->
+
+
+<Footer />

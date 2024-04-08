@@ -1,121 +1,106 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Navbar from '$lib/navbar.svelte';
-    import type { PageData } from './$types';
-    
-    export let data: PageData;
+	import { onMount } from 'svelte';
+	import { base } from '$lib';
+	import Projects from '$lib/projects.svelte';
+
+    let projects: {
+		status: 'IN_PROGRESS'|'ON_HOLD'|'COMPLETED'|'NOT_STARTED'|'CANCELED';
+		date_of_award: string | number | Date;
+		due_date: string | number | Date;
+		start_date: string | number | Date;
+		contractor: string;
+		project_number: string;
+		desc: string; title: string; 
+    };
+
+    const toDate = (d:string | number | Date) =>{
+        return new Date(d).toLocaleDateString("en-NG",{month:'short',year:"numeric"})
+    }
+    let statusColor = 'bg-green-500'
+
+    onMount(async ()=>{
+        let id = $page.params.id
+        projects = await fetch(base+'api/products.php?projects&id='+id)
+        .then((res)=>res.json())
+        .then((res)=>res[0])
+
+        console.log(projects)
+
+        switch (projects.status) {
+            case "CANCELED":
+                statusColor = 'bg-red-500'
+                break;
+            case 'IN_PROGRESS':
+            case 'COMPLETED':
+                statusColor = 'bg-green-500'
+                break;
+            case 'ON_HOLD':
+            case 'NOT_STARTED':
+                statusColor = 'bg-gray-500'
+                break;
+            default:
+                break;
+        }
+    })
+
+    $:loading = !projects
 </script>
 
-<Navbar />
-
-<main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs flex items-center"
-        style="background-image: url('img/breadcrumbs-bg.jpg');">
-        <div class="container relative flex flex-col items-center" data-aos="fade">
-
-            <h2>Project Details</h2>
-            <ol>
-                <li><a href="/">Home</a></li>
-                <li>Project Details</li>
-            </ol>
-
-        </div>
-    </div><!-- End Breadcrumbs -->
-
-    <!-- ======= Projet Details Section ======= -->
-    <section id="project-details" class="project-details">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="relative h-full">
-                <div class="slides-1 portfolio-details-slider swiper">
-                    <div class="swiper-wrapper items-center">
-
-                        <div class="swiper-slide">
-                            <img src="img/projects/remodeling-1.jpg" alt="">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="img/projects/construction-1.jpg" alt="">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="img/projects/design-1.jpg" alt="">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="img/projects/repairs-1.jpg" alt="">
-                        </div>
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
+{#if !loading}
+    <Navbar />
+    
+    <main id="main">
+    
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs flex items-center" style="background-image: url('{base}storage/projects/breadcrumbs-bg.jpg');">
+            <div class="container relative flex flex-col items-center" data-aos="fade">
+    
+                <h2>Project Details</h2>
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li>Project Details</li>
+                </ol>
+    
             </div>
-
-            <div class="grid grid-cols-12 gap-x-4 mt-4">
-                <div class="lg:col-span-8">
-                    <div class="portfolio-description">
-                        <h2>This is an example of portfolio detail</h2>
-                        <p>
-                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
-                            labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
-                            itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur
-                            dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                        </p>
-                        <p>
-                            Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus
-                            ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et
-                            doloribus doloremque nesciunt molestiae laboriosam.
-                        </p>
-
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                legam anim culpa.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                            <div>
-                                <img src="img/testimonials/testimonials-2.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                            </div>
+        </div><!-- End Breadcrumbs -->
+    
+        <!-- ======= Projet Details Section ======= -->
+        <section id="project-details" class="project-details">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="grid grid-cols-12 gap-x-4 mt-4">
+                    <div class="lg:col-span-8 order-2 lg:order-1">
+                        <div class="portfolio-description">
+                            <h2>{projects.title}</h2>
+                            
+                            <div class="">{@html projects.desc}</div>
+    
                         </div>
-
-                        <p>
-                            Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati
-                            earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae
-                            incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-
-                        <p>
-                            Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem
-                            libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque
-                            praesentium rem et qui nesciunt.
-                        </p>
-
+    
+                        <Projects />
+                    </div>
+    
+                    <div class="lg:col-span-4 order-1 lg:order-2">
+                        <div class="portfolio-info">
+                            <h3>Project information</h3>
+                            <ul>
+                                <li><strong>Project NO.:</strong> <span>{projects.project_number}</li>
+                                <li><strong>Project Status</strong> <span class={statusColor}>{projects.status.replaceAll("_"," ")}</li>
+                                <li><strong>Contractor</strong> <span>{projects.contractor}</span></li>
+                                <li><strong>Project Award Date</strong> <span>{toDate(projects.date_of_award)}</span></li>
+                                <li><strong>Project Start Date</strong> <span>{toDate(projects.start_date)}</span></li>
+                                <li><strong>Project Due Date</strong> <span>{toDate(projects.due_date)}</span></li>
+                                <li><strong>Project Sum Amount </strong> <span>{projects.contractor}</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <div class="lg:col-span-4">
-                    <div class="portfolio-info">
-                        <h3>Project information</h3>
-                        <ul>
-                            <li><strong>Category</strong> <span>Web design</span></li>
-                            <li><strong>Client</strong> <span>ASU Company</span></li>
-                            <li><strong>Project date</strong> <span>01 March, 2020</span></li>
-                            <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                            <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-                        </ul>
-                    </div>
-                </div>
+    
             </div>
-
-        </div>
-    </section><!-- End Projet Details Section -->
-
-</main>
+        </section><!-- End Projet Details Section -->
+    
+    </main>
+{:else}
+    <div id="preloader"></div>
+{/if}

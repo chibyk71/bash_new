@@ -5,14 +5,7 @@
 	import AltService from '$lib/altService.svelte';
 	import { base } from '$lib';
 	import { onMount } from 'svelte';
-    let projects: any[] = [];
-
-    onMount(async ()=>{
-        projects = await fetch(base+'api/products.php?projects')
-        .then((res)=>res.json())
-
-        console.table(projects)
-    })
+	import Construction from '$lib/construction.svelte';
 </script>
 
 <Navbar />
@@ -53,38 +46,7 @@
                     quis dolorem dolore earum</p>
             </div>
 
-            <div class="lg:grid gap-4 grid-cols-2">
-
-                {#each projects as item}
-                    <div class="" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-item">
-                            <div class="grid xl:grid-cols-12 gap-y-4 ">
-                                <div class="xl:col-span-5">
-                                    <div class="card-bg" style="background-image: url({base}uploaded/projects/{item.image});">
-                                    </div>
-                                </div>
-                                <div class="xl:col-span-7 flex items-center">
-                                    <div class="card-body">
-                                        <h4 class="card-title">{item.title}</h4>
-                                        <ul>
-                                            <li class="capitalize font-bold">project no.: <span class="text-lg/none">{item.project_number}</span></li>
-                                            <li class="capitalize line-clamp-1 font-bold">start date <span class="text-lg/none">{new Date(item.start_date).toLocaleDateString('en-NG')}</span></li>
-                                            <li class="capitalize line-clamp-1 font-bold">due date <span class="text-lg/none">{new Date(item.due_date).toLocaleDateString('en-NG')}</span></li>
-                                            <li class="capitalize font-bold">contractor <span class="text-lg/none">{item.contractor_name}</span></li>
-                                            <li class="capitalize font-bold">progress 
-                                                <div class="h-4 rounded-full relative bg-gray-400">
-                                                    <div class="h-4 rounded-full bg-purple-500 animate" style="width: {item.progress}%"></div>
-                                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">{item.progress}</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End Card Item -->
-                {/each}
-            </div>
+            <Construction />
         </div>
     </section><!-- End Constructions Section -->
 </main><!-- End #main -->
