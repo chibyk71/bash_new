@@ -9,21 +9,37 @@
 
         <div class="section-header">
             <h2>Rescue Mission Team</h2>
-            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat
-                sunt id nobis omnis tiledo stran delop</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-y-5 place-content-center">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-y-5 place-content-center">
 
             <div class="member" data-aos="fade-up" data-aos-delay="100">
                 <div class="member-img">
                     <img src="{base}storage/projects/governor.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="member-info text-center">
-                    <h4 class="capitalize"><small>His excellency</small> <b>dauda lawal</b></h4>
+                    <h4 class="uppercase"><small>His excellency</small> <b>dauda lawal</b></h4>
                     <span class="capitalize">the executive governor of zamfara state</span>
-                    <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
-                        distinctio dire flow</p>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-img">
+                    <img src="{base}storage/projects/dep_governor.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="member-info text-center">               
+                    <h4 class="uppercase"><small>His excellency </small> <b>mal. mani mummuni</b></h4>
+                    <span class="capitalize">deputy governor zamfara state</span>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-img">
+                    <img src="{base}storage/projects/ssg.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="member-info text-center">               
+                    <h4 class="uppercase"><small>Mal </small> <b>abubakar nakwada</b></h4>
+                    <span class="capitalize">secretary to the state government</span>
                 </div>
             </div><!-- End Team Member -->
 
@@ -32,10 +48,8 @@
                     <img src="{base}storage/projects/commissioner.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="member-info text-center">               
-                    <h4 class="text-uppercase"><small>Hon </small> <b>nasiru ibrahim</b></h4>
-                    <span class="text-capitalize">zamfara state commissioner of project implementation and monitoring</span>
-                    <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                        exercitationem ut</p>
+                    <h4 class="uppercase"><small>Hon </small> <b>nasiru ibrahim</b></h4>
+                    <span class="capitalize">zamfara state commissioner of project implementation and monitoring</span>
                 </div>
             </div><!-- End Team Member -->
 

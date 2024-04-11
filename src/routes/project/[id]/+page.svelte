@@ -6,8 +6,8 @@
 	import Projects from '$lib/projects.svelte';
 
     let projects: {
-		Files: any[];
-		milestones: any[];
+		Files: string;
+		milestones: string;
 		status: 'IN_PROGRESS'|'ON_HOLD'|'COMPLETED'|'NOT_STARTED'|'CANCELED';
 		date_of_award: string | number | Date;
 		due_date: string | number | Date;
@@ -20,16 +20,27 @@
     const toDate = (d:string | number | Date) =>{
         return new Date(d).toLocaleDateString("en-NG",{month:'short',year:"numeric"})
     }
+
+    const convertStatus = (status:"YET_TO_COMMENCE"|"IN_PROGRESS"|"COMPLETED")=>{
+        if (status === 'COMPLETED') {
+            return 'completed.svg'
+        }
+
+        if (status === 'YET_TO_COMMENCE') {
+            return 'cancelled.svg'
+        }
+
+        return 'in_progress.svg'
+    } 
+
     let statusColor = 'bg-green-500'
+    let Milestone: any;
 
     onMount(async ()=>{
         let id = $page.params.id
         projects = await fetch(base+'api/products.php?projects&id='+id)
         .then((res)=>res.json())
         .then((res)=>res[0])
-
-        console.log(projects)
-
         switch (projects.status) {
             case "CANCELED":
                 statusColor = 'bg-red-500'
@@ -45,6 +56,8 @@
             default:
                 break;
         }
+
+        Milestone = JSON.parse(projects.milestones)
     })
 
     $:loading = !projects
@@ -79,7 +92,6 @@
                             <div class="">{@html projects.desc}</div>
     
                         </div>
-    
                         <Projects data={projects.Files} />
                     </div>
     
@@ -88,7 +100,7 @@
                             <h3>Project information</h3>
                             <ul>
                                 <li><strong>Project NO.:</strong> <span>{projects.project_number}</li>
-                                <li><strong>Project Status</strong> <span class={statusColor}>{projects.status.replaceAll("_"," ")}</li>
+                                <li class="flex"><strong>Project Status</strong> <span class="px-3 rounded-lg text-gray-200 {statusColor}">{projects.status.replaceAll("_"," ")}</li>
                                 <li><strong>Contractor</strong> <span>{projects.contractor}</span></li>
                                 <li><strong>Project Award Date</strong> <span>{toDate(projects.date_of_award)}</span></li>
                                 <li><strong>Project Start Date</strong> <span>{toDate(projects.start_date)}</span></li>
@@ -98,6 +110,36 @@
                         </div>
                     </div>
                 </div>
+
+                <section id="services" class="services section-bg">
+                    <div class="container aos-init aos-animate" data-aos="fade-up">
+        
+                        <div class="section-header !pb-8">
+                            <h2>Sub Projects</h2>
+                        </div>
+        
+                        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+                            {#each Milestone as item}
+                                <div class="aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="service-item  position-relative">
+                                        <div class="icon">
+                                            <img src='{convertStatus(item.status)}' class="" alt="">
+                                        </div>
+                                        <h3>{item.name}</h3>
+                                        <p>Contractor:{item.contractor}</p>
+                                        <div class="w-full bg-gray-200 rounded-lg">
+                                            <div class="bg-[var(--color-primary)] p-0.5 text-center text-xs font-medium leading-none text-primary-100"
+                                              style="width:{item.progress}%">
+                                              {item.progress}%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Service Item -->
+                            {/each}
+                        </div>
+        
+                    </div>
+                </section>
     
             </div>
         </section><!-- End Projet Details Section -->
