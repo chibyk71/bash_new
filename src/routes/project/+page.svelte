@@ -14,7 +14,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs flex items-center" style="background-image: url('{base}storage/projects/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs flex items-center" style="background-image: url('{base}storage/projects/home.jpg');">
         <div class="container relative flex flex-col items-center" data-aos="fade">
 
             <h2>Projects</h2>
