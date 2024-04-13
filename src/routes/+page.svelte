@@ -17,9 +17,8 @@
         <div class="container">
             <div class="flex flex-wrap justify-center">
                 <div class="lg:w-1/2 w-full text-center">
-                    <h2 data-aos="fade-down">Welcome to <span>Zamfara State Govenment</span></h2>
+                    <h2 data-aos="fade-down" class="capitalize">Welcome to <span>Zamfara State Government project implementation and monitoring unit</span></h2>
                     <p data-aos="fade-up font-bold capitalize">we believe transparency is key. That's why we've developed zamfara state project monitoring software, a user-friendly platform dedicated to making government project and contract information readily available to the public.</p>
-                    <a data-aos="fade-up mt-5" data-aos-delay="200" href="#main" class="btn-get-started">Get Started</a>
                 </div>
             </div>
         </div>
@@ -42,8 +41,6 @@
 
             <div class="section-header">
                 <h2>Constructions</h2>
-                <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt
-                    quis dolorem dolore earum</p>
             </div>
 
             <Construction />
