@@ -30,7 +30,7 @@
     <section id="projects" class="projects">
         <div class="container" data-aos="fade-up">
 
-            <Construction />
+            <Construction limit={}/>
 
         </div>
     </section><!-- End Our Projects Section -->
