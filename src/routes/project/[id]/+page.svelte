@@ -14,7 +14,7 @@
 		start_date: string | number | Date;
 		contractor: string;
 		project_number: string;
-		desc: string; title: string; 
+		description: string; title: string; 
     };
 
     const toDate = (d:string | number | Date) =>{
@@ -89,7 +89,7 @@
                         <div class="portfolio-description">
                             <h2>{projects.title}</h2>
                             
-                            <div class="">{@html projects.desc}</div>
+                            <div class="">{@html projects.description}</div>
     
                         </div>
                         <Projects data={projects.Files} />
