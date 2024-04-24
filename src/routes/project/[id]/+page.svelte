@@ -14,7 +14,8 @@
 		start_date: string | number | Date;
 		contractor: string;
 		project_number: string;
-		description: string; title: string; 
+		description: string; 
+        title: string; 
     };
 
     const toDate = (d:string | number | Date) =>{
