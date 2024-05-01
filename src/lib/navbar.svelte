@@ -1,6 +1,6 @@
 <script>
 	import { IconList, IconX } from "@tabler/icons-svelte";
-	import { onMount } from "svelte";
+	import { afterUpdate, onMount } from "svelte";
 	import { page } from '$app/stores';
 
 	onMount(()=>{
@@ -19,6 +19,10 @@
 			mobileNavShow?.classList.toggle('hidden');
 			mobileNavHide?.classList.toggle('hidden');
 		}
+	})
+
+	afterUpdate(()=>{
+		document.body.classList.remove('mobile-nav-active');
 	})
 
 	const path = $page.url.pathname

@@ -14,12 +14,11 @@
 <div class="lg:grid gap-x-4 gap-y-8 grid-cols-2">
 
     {#each projects as item}
-        <a href='project/{item.id}' class="text-gray-600" data-aos="fade-up" data-aos-delay="100">
+        <a href='project/{item.id}' class="text-gray-600 my-5" data-aos="fade-up" data-aos-delay="100">
             <div class="card-item">
                 <div class="grid xl:grid-cols-12 gap-4 ">
                     <div class="xl:col-span-5">
-                        <div class="card-bg h-full bg-contain" style="background-image: url({base}uploaded/projects/{item.image});">
-                        </div>
+                        <div class="card-bg h-full bg-contain" style="background-image: url({base}uploaded/projects/{item.image});" />
                     </div>
                     <div class="xl:col-span-7 flex items-center">
                         <div class="card-body">

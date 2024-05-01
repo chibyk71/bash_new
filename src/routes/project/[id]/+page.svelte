@@ -86,7 +86,7 @@
         <section id="project-details" class="project-details">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="grid grid-cols-12 gap-x-4 mt-4">
-                    <div class="lg:col-span-8 order-2 lg:order-1">
+                    <div class="lg:col-span-8 col-span-12 order-2 lg:order-1">
                         <div class="portfolio-description">
                             <h2>{projects.title}</h2>
                             
@@ -96,7 +96,7 @@
                         <Projects data={projects.Files} />
                     </div>
     
-                    <div class="lg:col-span-4 order-1 lg:order-2">
+                    <div class="lg:col-span-4 col-span-12 order-1 lg:order-2">
                         <div class="portfolio-info">
                             <h3>Project information</h3>
                             <ul>

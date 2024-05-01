@@ -38,8 +38,7 @@
                 <div class="lg:w-7/12 w-full about-img" style="background-image: url({base}storage/projects//about.jpg);"></div>
 
                 <div class="lg:w-7/12 w-full">
-                    <h2>Consequatur eius et magnam</h2>
-                    <div class="our-story">
+                    <div class="our-story sm:p-4 lg:p-10">
                         <h3>Our Mission</h3>
                         <p>Our mission is to provide citizens with easy access to information about government contracts and projects.</p>
                         <p>We aim to promote transparency and empower citizens by sharing project details in a user-friendly manner.</p>
