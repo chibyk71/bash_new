@@ -22,7 +22,16 @@ export default {
 				lg: `${960 / 16}rem`,
 				xl: `${1140 / 16}rem`,
 				xxl: `${1320 / 16}rem`,
-			}
+			},
+			keyframes: {
+				fadeIn: {
+					"0%": { opacity: 0 },
+					"100%": { opacity: 100 },
+				},
+			},
+			animation: {
+				fadeIn: "fadeIn 0.2s ease-in-out forwards",
+			},
 		}
 	},
 	plugins: []

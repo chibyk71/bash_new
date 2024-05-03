@@ -17,7 +17,7 @@
         <div class="container">
             <div class="flex flex-wrap justify-center">
                 <div class="lg:w-1/2 w-full text-center">
-                    <h2 data-aos="fade-down" class="capitalize">Welcome to <span>Zamfara State Government project implementation and monitoring unit</span></h2>
+                    <h2 data-aos="fade-down" class="capitalize">project implementation and monitoring unit</h2>
                     <p data-aos="fade-up font-bold capitalize">we believe transparency is key. That's why we've developed zamfara state project monitoring software, a user-friendly platform dedicated to making government project and contract information readily available to the public.</p>
                 </div>
             </div>
